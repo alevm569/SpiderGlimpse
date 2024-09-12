@@ -14,8 +14,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #e6b9b8;
+  padding: 20px;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,10 +25,71 @@
   color: white;
 }
 
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #E94B4B;
+}
+.filter-buttons {
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.App-logo {
+  width: 100px;
+  height: auto;
+}
 .App-link {
   color: #61dafb;
 }
+.filter-button {
+  background-color: #455A64;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.7em;
+  flex: 1 1 150px;
+  margin-bottom: 10px;
+  text-align: center; 
+}
 
+.filter-button:hover {
+  background-color: #738b96;
+}
+main {
+  padding: 20px;
+}
+
+.entries-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.entry-item {
+  padding: 10px;
+  margin: 5px 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.entry-number {
+  font-weight: bold;
+}
+
+.entry-points {
+  color: #C16462;
+}
+
+.entry-comments {
+  color: #E94B4B;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
