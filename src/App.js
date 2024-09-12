@@ -5,7 +5,7 @@ import logo from './assets/new_crawler.png';
 
 const App = () => {
   const [entries, setEntries] = useState([]);
-  const [filter, setFilter] = useState('all'); // Estado inicial para el filtro
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     const baseURL = 'http://127.0.0.1:5000';
@@ -21,7 +21,6 @@ const App = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, [filter]);
 
-  // Función para obtener la clase de cada botón
   const getButtonClass = (currentFilter) => {
     return filter === currentFilter ? 'filter-button active' : 'filter-button';
   };
