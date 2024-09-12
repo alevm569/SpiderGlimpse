@@ -61,6 +61,11 @@
 .filter-button:hover {
   background-color: #738b96;
 }
+.filter-button.active {
+  background-color: #738b96; 
+  font-weight: bold;
+}
+
 main {
   padding: 20px;
 }
