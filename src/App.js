@@ -5,7 +5,7 @@ import logo from './assets/new_crawler.png';
 
 const App = () => {
   const [entries, setEntries] = useState([]);
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState('all'); // Estado inicial para el filtro
 
   useEffect(() => {
     const baseURL = 'http://127.0.0.1:5000';
@@ -21,15 +21,20 @@ const App = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, [filter]);
 
+  // Función para obtener la clase de cada botón
+  const getButtonClass = (currentFilter) => {
+    return filter === currentFilter ? 'filter-button active' : 'filter-button';
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" />
+        <img src={logo} className="App-logo" alt="SpiderGlimpse Logo" />
         <h1>SpiderGlimpse</h1>
         <div className="filter-buttons">
-          <button onClick={() => setFilter('all')} className="filter-button">Todos</button>
-          <button onClick={() => setFilter('comments')} className="filter-button">Más de 5 palabras (Ordenar por comentarios)</button>
-          <button onClick={() => setFilter('points')} className="filter-button">Menos de o igual a 5 palabras (Ordenar por puntos)</button>
+          <button onClick={() => setFilter('all')} className={getButtonClass('all')}>Todos</button>
+          <button onClick={() => setFilter('comments')} className={getButtonClass('comments')}>Más de 5 palabras (Ordenar por comentarios)</button>
+          <button onClick={() => setFilter('points')} className={getButtonClass('points')}>Menos de o igual a 5 palabras (Ordenar por puntos)</button>
         </div>
       </header>
       <main>
